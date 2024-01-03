@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Addedit Page";
+}
+@model Employee
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Employee Details Form</h5>
+
+        <form class="row g-3" asp-action="Save" method="post">
+            @if (Model != null)
+            {
+                
+            <input type="hidden" class="form-control" asp-for="EmpID" value="@Model.EmpID">
+            }
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label"><span class="text-danger">*</span>Name</label>
+                <input type="text" class="form-control" placeholder="Enter Employee Name" asp-for="EmpName">
+                <span asp-validation-for="EmpName" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label"><span class="text-danger">*</span>Code</label>
+                <input type="text" class="form-control" placeholder="Enter Employee Code" asp-for="EmpCode">
+                <span asp-validation-for="EmpCode" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label"><span class="text-danger">*</span>Contact</label>
+                <input type="text" class="form-control" placeholder="Enter Contact" asp-for="Contact">
+                <span asp-validation-for="Contact" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label"><span class="text-danger">*</span>Email</label>
+                <input type="text" class="form-control" placeholder="Enter Email" asp-for="Email">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label for="inputName5" class="form-label"><span class="text-danger">*</span>Salary</label>
+                <input type="text" class="form-control" placeholder="Enter Salary" asp-for="Salary">
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="text-center">
+                <br />
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a asp-action="Table" class="btn btn-primary">Back</a>
+            </div>
+        </form>
+        <!-- End No Labels Form -->
+    </div>
+</div>

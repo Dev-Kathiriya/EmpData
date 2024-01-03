@@ -1,0 +1,27 @@
+﻿@model List<Employee>
+<a asp-action="AddEdit">Add</a>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Conact</th>
+        <th>Email</th>
+        <th>Salary</th>
+    </tr>
+    @foreach (Employee emp in Model)
+    {
+        <tr>
+            <td>@emp.EmpID</td>
+            <td>@emp.EmpName</td>
+            <td>@emp.EmpCode</td>
+            <td>@emp.Contact</td>
+            <td>@emp.Email</td>
+            <td>@emp.Salary</td>
+            <td>
+                <a asp-action="delete" asp-route-id="@emp.EmpID">Delete</a>
+                <a asp-action="AddEdit" asp-route-id="@emp.EmpID">Update</a>
+            </td>
+        </tr>
+    }
+</table>
